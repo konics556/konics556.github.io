@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Employee Input Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="form">
+            <div class="row">
+                <div class="fields">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="entries">
+                    <input type="text" name="firstName" id="firstName" autofocus>
+                </div>
+            </div>
+            <div class="row">
+                <div class="fields">
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="entries">
+                    <input type="text" name="lastName" id="lastName">
+                </div>
+            </div>
+            <div class="row">
+                <div class="fields">
+                    <label for="gender">Gender</label>
+                </div>
+                <div class="entries">
+                    <input type="radio" name="gender" id="male">
+                    <label for="male">MALE</label>
+                    <input type="radio" name="gender" id="female">
+                    <label for="female">FEMALE</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="fields">
+                    <label for="maritalStatus">Marital Status</label>
+                </div>
+                <div class="entries">
+                    <input type="radio" name="maritalStatus" id="married" onchange="onMaritalStatusChange(event)">
+                    <label for="married">Married</label>
+                    <input type="radio" name="maritalStatus" id="unmarried" onchange="onMaritalStatusChange(event)">
+                    <label for="unmarried">Unmarried</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="fields">
+                    <label for="nameOfSpouse">Name of Spouse</label>
+                </div>
+                <div class="entries">
+                    <input type="text" name="nameOfSpouse" id="nameOfSpouse" disabled=true>
+                </div>
+            </div>
+            <div class="row">
+                <div class="fields">
+                    <label for="otherDetails">Other Details</label>
+                </div>
+                <div class="entries">
+                    <textarea name="otherDetails" id="otherDetails" cols="20" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="terms-conditions">
+                    <input type="checkbox" name="tnc" id="tnc">
+                    <label for="tnc">I accept <span class="tnc">Terms and Conditions</span></label>
+                </div>
+            </div>
+            <div class="row button-row">
+                <button id="reset" class="buttons" onclick="onReset(event)">
+                    RESET
+                </button>
+                <button id="save" type="submit" class="buttons" onclick="onSave(event)">
+                    SAVE
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal(event)">&times;</span>
+            <h1 class="modal-heading">Employee Details</h1>
+            <p>First Name: <span id="modalFirstName"></span></p>
+            <p>Last Name: <span id="modalLastName"></span></p>
+            <p>Gender: <span id="modalGender"></span></p>
+            <p>Marital Status: <span id="modalMaritalStatus"></span></p>
+            <p id="modalNameOfSpouseEntry">Name of Spouse: <span id="modalNameOfSpouse"></span></p>
+            <p>Other Details: <span id="modalOtherDetails"></span></p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
