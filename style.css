@@ -10,25 +10,30 @@ body {
 
 .container {
     display: flex;
+    flex-direction: column;
+    width: 100%;
     height: 1000px;
     justify-content: center;
     align-items: center;
 }
 
-#form {
+form {
     border: 0px solid black;
     border-radius: 25px;
     padding: 25px;
-    height: auto;
     width: 40%;
     background-color: white;
 }
 
 .row {
-    width: 100%;
     margin: 10px;
     display: flex;
     flex-wrap: wrap;
+}
+
+.form-heading{
+    justify-content: center;
+    color: #5367ff;
 }
 
 .button-row {
@@ -36,6 +41,7 @@ body {
 }
 
 .fields, .entries, .terms-conditions {
+    display: flex;
     padding: 5px;
 }
 
@@ -43,15 +49,24 @@ body {
     width: 100%;
 }
 
+.terms-conditions span {
+    text-decoration: ;
+}
+
 .fields {
-    width: 20%;
+    width: 30%;
 }
 
 .entries {
-    width: 80%;
+    width: 70%;
 }
 
-#reset , #save{
+.entries input , .fields label, .entries select, .entries textarea{
+    width: 100%;
+    padding: 5px;
+}
+
+#reset-button , #save-button{
     padding: 10px;
     margin: 5px;
     width: 20%;
@@ -59,11 +74,11 @@ body {
     border-radius: 25px;
 }
 
-#reset {
+#reset-button {
     background-color: #ffb61b;
 }
 
-#save {
+#save-button {
     background-color: #00d09c;
 }
 
@@ -81,7 +96,7 @@ body {
 }
 
 .modal-content {
-    background-color: #66e3c4;
+    background-color: white;
     margin: 15% auto;
     padding: 20px;
     border: 0px solid black;
@@ -108,4 +123,13 @@ body {
 
 .modal-content p {
     color:#44475b;
+    font-weight: bold;
 }
+
+.modal-content p span{
+    font-weight: normal;
+}
+
+.fields label {
+    font-weight:bold;
+}   

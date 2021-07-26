@@ -7,13 +7,16 @@
 
 <body>
     <div class="container">
-        <form id="form">
+        <form id="employee-form" name="employee-form">
+            <div class="row form-heading">
+                <h1>Employee Details Form</h1>
+            </div>
             <div class="row">
                 <div class="fields">
                     <label for="firstName">First Name</label>
                 </div>
                 <div class="entries">
-                    <input type="text" name="firstName" id="firstName" autofocus>
+                    <input type="text" name="firstName" id="firstName" placeholder="Aditya" autofocus>
                 </div>
             </div>
             <div class="row">
@@ -21,7 +24,7 @@
                     <label for="lastName">Last Name</label>
                 </div>
                 <div class="entries">
-                    <input type="text" name="lastName" id="lastName">
+                    <input type="text" name="lastName" id="lastName" placeholder="Singh">
                 </div>
             </div>
             <div class="row">
@@ -29,10 +32,11 @@
                     <label for="gender">Gender</label>
                 </div>
                 <div class="entries">
-                    <input type="radio" name="gender" id="male">
-                    <label for="male">MALE</label>
-                    <input type="radio" name="gender" id="female">
-                    <label for="female">FEMALE</label>
+                    <select name="gender" id="gender-list">
+                        <option value="Select">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
@@ -40,10 +44,11 @@
                     <label for="maritalStatus">Marital Status</label>
                 </div>
                 <div class="entries">
-                    <input type="radio" name="maritalStatus" id="married" onchange="onMaritalStatusChange(event)">
-                    <label for="married">Married</label>
-                    <input type="radio" name="maritalStatus" id="unmarried" onchange="onMaritalStatusChange(event)">
-                    <label for="unmarried">Unmarried</label>
+                    <select name="maritalStatus" id="marital-status-list" onchange="onMaritalStatusChange(event)">
+                        <option value="Select">Select</option>
+                        <option value="Married">Married</option>
+                        <option value="Unmarried">Unmarried</option>
+                    </select>
                 </div>
             </div>
             <div class="row">
@@ -51,7 +56,7 @@
                     <label for="nameOfSpouse">Name of Spouse</label>
                 </div>
                 <div class="entries">
-                    <input type="text" name="nameOfSpouse" id="nameOfSpouse" disabled=true>
+                    <input type="text" name="nameOfSpouse" id="nameOfSpouse" placeholder="Ananya" disabled=true>
                 </div>
             </div>
             <div class="row">
@@ -59,7 +64,7 @@
                     <label for="otherDetails">Other Details</label>
                 </div>
                 <div class="entries">
-                    <textarea name="otherDetails" id="otherDetails" cols="20" rows="4"></textarea>
+                    <textarea name="otherDetails" id="otherDetails" cols="20" rows="4" placeholder="Guitar"></textarea>
                 </div>
             </div>
             <div class="row">
@@ -69,10 +74,10 @@
                 </div>
             </div>
             <div class="row button-row">
-                <button id="reset" class="buttons" onclick="onReset(event)">
+                <button id="reset-button" class="buttons" onclick="onReset(event)">
                     RESET
                 </button>
-                <button id="save" type="submit" class="buttons" onclick="onSave(event)">
+                <button id="save-button" type="submit" class="buttons" onclick="onSave(event)">
                     SAVE
                 </button>
             </div>
